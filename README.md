@@ -59,6 +59,9 @@ It's used for storing the most recent event in Redis for /getLast endpoint
 ### Anti flood for GET requests ####
 The app prevents more than 10 requests per second per remote ip
 
+### Monitoring ####
+The app provides metrics to prometheues server via http://localhost:8080/actuator/prometheus
+
 ## Docker compose ##
 Use /docker/docker-compose.yml to run the app. Change:
 - volumes - to the folder with rediscrud-1.0.jar
