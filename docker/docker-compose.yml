@@ -1,0 +1,15 @@
+redis:
+  image: redis:6.2.3-alpine
+  ports:
+    - "6379:6379"
+
+app:
+  image: stanislavko2/cerebro_spring
+  environment:
+    - "URL=https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    - JAR=./rediscrud-1.0.jar
+    - "SKF_REDIS_SERVER=192.168.0.28"
+  ports:
+    - "8080:8080"
+  volumes:
+    - /home/stanislav/docker/hh_skf/jars:/docker_volume
